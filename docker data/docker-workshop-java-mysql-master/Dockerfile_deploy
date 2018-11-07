@@ -1,0 +1,5 @@
+FROM tomcat:9.0.10-jre8-alpine
+COPY  ./target/api.war /usr/local/tomcat/webapps/api.war
+
+#cli
+#docker image build -t deploy:0.1 -f Dockerfile_deploy .
