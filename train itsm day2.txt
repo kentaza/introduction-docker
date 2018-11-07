@@ -1,0 +1,35 @@
+1.Work with Nginx
+# vi index.html
+# docker image pull nginx:1.14-alpine
+#docker container run -d \
+-v $(pwd)/index.html:/usr/share/nginx/html/index.html -p 8080:80 \
+ nginx:1.14-alpine
+
+2. Work with JDK
+# docker image pull openjdk:8u181-jdk-alpine3.8
+# docker container run --rm \
+-v $(pwd):/docker openjdk:8u181-jdk-alpine3.8 javac /docker/Hello.java
+
+docker container run --rm \
+-v $(pwd):/xx -w /xx   openjdk:8u171-jdk-alpine3.8 java Hello
+
+3.comply java .war
+  # curl -O https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+  # docker image pull tomcat:9.0.12-jre8-alpine
+  # docker container run --rm -v $(pwd):  openjdk:8u171-jdk-alpine3.8 javac /xx/Hello.java
+
+  # docker container run -d -v $(pwd):/usr/local/tomcat/webapps/semple.war -p 8085:8080 tomcat:9.0.12-jre8-alpine 
+  # docker container run -d -v c://docker:/usr/local/tomcat/webapps/semple.war -p 8085:8080 tomcat:9.0.12-jre8-alpine  (windows)
+
+test url: localhost:8888/semple
+
+4.Upload image to registry\
+  # docker image pull nginx:1.14-alpine
+  # docker image push nginx:1.14-alpine  (format official)
+  # docker image push 
+  # docker image tag --help
+  # docker image tag nginx:1.14-alpine kentaza/ngenx2:0.1
+  # docker images ls
+  # docker image push kentaza:nginx2:0.1
+
+5.Introduction dockerfile
